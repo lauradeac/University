@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project (':Persistence')
+    implementation project (':Model')
+    implementation project (':Services')
+    implementation project (':Networking')
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+application{
+    mainClass='StartObjectServer'
+}
+
+test {
+    useJUnitPlatform()
+}
+
