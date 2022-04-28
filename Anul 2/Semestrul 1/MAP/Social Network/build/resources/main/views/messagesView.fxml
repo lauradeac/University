@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="414.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="socialnetwork.controller.ChatController">
+   <effect>
+      <SepiaTone />
+   </effect>
+   <children>
+      <TextField fx:id="textFieldTypeMessage" layoutX="304.0" layoutY="342.0" prefHeight="41.0" prefWidth="214.0" promptText="Scrie mesajul aici..." AnchorPane.bottomAnchor="30.4" AnchorPane.leftAnchor="304.0" AnchorPane.rightAnchor="140.6" AnchorPane.topAnchor="342.0" />
+      <TableView fx:id="tableView" layoutX="21.0" layoutY="48.0" prefHeight="286.0" prefWidth="266.0" AnchorPane.bottomAnchor="79.60000000000002" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="371.6" AnchorPane.topAnchor="48.0">
+        <columns>
+          <TableColumn fx:id="tableColumnUsername" prefWidth="75.0" text="Username" />
+          <TableColumn fx:id="tableColumnFirstName" prefWidth="75.0" text="FirstName" />
+            <TableColumn fx:id="tableColumnLastName" prefWidth="75.0" text="LastName" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableView2" layoutX="312.0" layoutY="48.0" onMouseClicked="#handleChangeButton" onMouseDragged="#handleChangeButton" onMouseEntered="#handleChangeButton" onMouseExited="#handleChangeButton" onMouseMoved="#handleChangeButton" onMousePressed="#handleChangeButton" onMouseReleased="#handleChangeButton" prefHeight="286.0" prefWidth="335.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="48.0">
+        <columns>
+          <TableColumn fx:id="tableColumnMesaj" prefWidth="334.1999816894531" text="Chat" />
+        </columns>
+      </TableView>
+      <Button fx:id="buttonSendMessage" layoutX="531.0" layoutY="354.0" mnemonicParsing="false" onAction="#handleSend" prefHeight="30.0" prefWidth="99.0" text="Send" AnchorPane.bottomAnchor="29.6" AnchorPane.leftAnchor="531.0" AnchorPane.rightAnchor="28.799999999999997" AnchorPane.topAnchor="354.0" />
+      <Label layoutX="34.0" layoutY="24.0" prefHeight="17.0" prefWidth="278.0" text="Selecteaza prieteni pentru a le trimite mesaj!" AnchorPane.bottomAnchor="372.4" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="346.6" AnchorPane.topAnchor="24.0" />
+      <Button layoutX="34.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleChat" prefHeight="30.0" prefWidth="177.0" text="Show conversation" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="448.0" AnchorPane.topAnchor="347.0" />
+   </children>
+</AnchorPane>
