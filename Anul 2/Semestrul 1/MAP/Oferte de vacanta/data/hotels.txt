@@ -1,0 +1,4 @@
+1;2;Sunset;56;152;TEENAGERS
+2;2;Sunrise;60;120;OLDPEOPLE
+3;1;BeautifulBySea;80;200;FAMILY
+4;3;WavesAfterWaves;120;180;FAMILY
