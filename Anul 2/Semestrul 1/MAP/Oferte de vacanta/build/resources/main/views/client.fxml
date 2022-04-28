@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practic.controller.ClientController">
+   <children>
+      <TableView fx:id="tableViewOffers" layoutX="38.0" layoutY="169.0" prefHeight="200.0" prefWidth="374.0">
+        <columns>
+          <TableColumn fx:id="columnHotelName" prefWidth="88.00006103515625" text="Hotel Name" />
+          <TableColumn fx:id="columnLocation" prefWidth="89.5999755859375" text="Location" />
+            <TableColumn fx:id="columnStart" prefWidth="98.39996337890625" text="Start Date" />
+            <TableColumn fx:id="columnEnd" prefWidth="100.0" text="End Date" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="38.0" layoutY="141.0" prefHeight="18.0" prefWidth="374.0" text="Available Special Offers for you:" />
+   </children>
+</AnchorPane>
