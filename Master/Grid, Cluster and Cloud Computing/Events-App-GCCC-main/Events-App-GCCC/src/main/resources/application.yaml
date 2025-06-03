@@ -1,0 +1,43 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+  application:
+    name: demo
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    url: jdbc:sqlserver://gccc-events-server.database.windows.net:1433;database=events-db;user=admin-events@gccc-events-server;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    url: jdbc:sqlserver://localhost\MSSQLSERVER:1433;authenticationScheme=NTLM;encrypt=true;trustServerCertificate=true;databaseName=events-db;
+    password: pass
+    username: user
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.SQLServerDialect
+#        hbm2ddl:
+#          auto: validate
+        default_schema: dbo
+    generate-ddl: true
+security:
+  oauth2:
+    resource-server:
+      jwt:
+        jwk-set-uri: https://login.windows.net/common/discovery/keys
+  cloud:
+    azure:
+      active-directory:
+        enabled: true
+        profile:
+          tenant-id:
+        credential:
+          client-id:
+          client-secret:
+
+server:
+  port: 8080
+  forward-headers-strategy: native

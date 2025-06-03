@@ -1,0 +1,16 @@
+<button class="logout-btn" (click)="logout()">Logout</button>
+<div class="container">
+  <h1>Welcome!</h1>
+  <div *ngFor="let event of events; let i = index" class="event-card">
+    <h2>{{ event.name }}</h2>
+    <img [src]="event.imageUrl" alt="{{ event.name }}" class="event-image">
+    <p><strong>Locație:</strong> {{ event.location }}</p>
+    <p><strong>Data și oră:</strong> {{ formatDate(event.dateTime)  }}</p>
+    <p><strong>Categorie:</strong> {{ event.category }}</p>
+    <p><strong>Descriere:</strong> {{ event.description }}</p>
+    <button class="edit-event-button" (click)="editEvent(event.eventId)">Editează</button>
+    <button class="delete-event-button" (click)="deleteEvent(event.eventId, i)">Șterge</button>
+  </div>
+</div>
+<button class="add-event-button" (click)="addEvent()">Adaugă eveniment</button>
+

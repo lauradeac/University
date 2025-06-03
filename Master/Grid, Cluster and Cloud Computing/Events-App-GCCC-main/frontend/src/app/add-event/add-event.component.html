@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Adăugare Eveniment</h2>
+
+  <!-- Notificare -->
+  <div *ngIf="notificationMessage" class="notification">
+    {{ notificationMessage }}
+  </div>
+
+  <form (ngSubmit)="submitForm()" #eventForm="ngForm">
+    <div class="form-group">
+      <label for="name">Nume:</label>
+      <input type="text" id="name" name="name" class="form-control" [(ngModel)]="event.name" required>
+    </div>
+    <div class="form-group">
+      <label for="dateTime">Data și Ora:</label>
+      <input type="datetime-local" id="dateTime" name="dateTime" class="form-control" [(ngModel)]="event.dateTime" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Descriere:</label>
+      <textarea id="description" name="description" class="form-control" [(ngModel)]="event.description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="category">Categorie:</label>
+      <select id="category" name="category" class="form-control" [(ngModel)]="event.category" required>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="location">Locație:</label>
+      <input type="text" id="location" name="location" class="form-control" [(ngModel)]="event.location" required>
+    </div>
+    <div class="form-group">
+      <label for="image">Imagine:</label>
+      <input type="file" id="image" name="image" class="form-control" accept="image/*" (change)="handleFileInput($event)" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Adaugă eveniment</button>
+    <button type="button" class="btn btn-secondary" (click)="cancelForm()" >Anulează</button>
+  </form>
+</div>
